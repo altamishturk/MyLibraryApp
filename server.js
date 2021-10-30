@@ -1,7 +1,3 @@
-// // loading env file varibales if running in production 
-// if (process.env.NODE_ENV !== 'production') {
-//     require('dotenv').config();
-// }
 // modules 
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts')
