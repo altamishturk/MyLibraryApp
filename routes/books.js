@@ -59,7 +59,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-// show books route 
+// show one book route 
 router.get('/:id', async (req, res) => {
     try {
         const book = await Book.findById(req.params.id)
