@@ -23,5 +23,5 @@ authorsSchema.pre('remove', function (next) {
 })
 
 
-// module.exports = mongoose.model('Author', authorsSchema);
-module.exports = mongoose.models.author || mongoose.model('author', authorsSchema);
+module.exports = mongoose.model('Author', authorsSchema);
+// module.exports = mongoose.models.author || mongoose.model('author', authorsSchema);

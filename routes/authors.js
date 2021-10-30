@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
     })
 
     try {
-        console.log(req);
+        // console.log(req);
         await author.save();
         res.redirect(`/authors/${author.id}`);
     }
@@ -47,6 +47,7 @@ router.post('/', async (req, res) => {
     }
 })
 
+// show one author 
 router.get('/:id', async (req, res) => {
     try {
         const author = await Author.findById(req.params.id);
@@ -59,6 +60,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+// edit author 
 router.get('/:id/edit', async (req, res) => {
 
     try {
@@ -69,13 +71,15 @@ router.get('/:id/edit', async (req, res) => {
         res.redirect('/authors')
     }
 })
+
+// update author 
 router.put('/:id', async (req, res) => {
     let author;
     try {
         author = await Author.findById(req.params.id);
         author.name = req.body.name;
         await author.save();
-        res.redirect(`/authors/${newAuthor.id}`);
+        res.redirect(`/authors/`);
     }
     catch {
         if (author == null) {
@@ -83,12 +87,14 @@ router.put('/:id', async (req, res) => {
         } else {
             res.render('authors/new', {
                 author: author,
-                errorMessage: 'Error creating author'
+                errorMessage: 'Error updating an author'
             })
         }
 
     }
 })
+
+// delete author 
 router.delete('/:id', async (req, res) => {
     let author;
     try {
