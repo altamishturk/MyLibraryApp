@@ -8,7 +8,8 @@ router.get('/', async (req, res) => {
 
     let searchOption = {};
     if (req.query.name != null && req.query.name != '') {
-        searchOption.name = new RegExp(req.query.name, 'i')
+        const str = req.query.name.trim();
+        searchOption.name = new RegExp(str, 'i');
     }
 
     try {
