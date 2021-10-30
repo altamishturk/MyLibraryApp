@@ -1,0 +1,23 @@
+<h2 class="page-header">Serech author</h2>
+<form action="/authors" method="GET">
+    <div class="form-row">
+        <div class="form-item">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="<%= searchOption.name %> ">
+        </div>
+    </div>
+    <div class="form-row form-row-end">
+        <button type="submit" class="btn btn-primery">Search</button>
+    </div>
+</form>
+<br>
+<% for( let i = 0; i < authors.length; i++ ) { %>
+<div class="author-row">
+    <div class="author-name"><%= authors[i].name %></div>
+    <div class="btn-row">
+        <a href="/authors/<%= authors[i].id %>" class="btn btn-primery">View</a>
+        <a href="/authors/<%= authors[i].id %>/edit" class="btn btn-primery">Edit</a>
+        <%- include('../partials/deleteForm',{url: `/authors/${authors[i].id}`}) %>
+    </div>
+</div>
+<% } %>

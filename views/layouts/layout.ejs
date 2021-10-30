@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <!-- my css  -->
+    <link rel="stylesheet" id="main-css" href="/styleSheets/main.css">
+    <!-- file pond cdn  -->
+    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+    <!-- file pond pligin  -->
+    <!-- img preview  -->
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+        rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container">
+        <%- include('../partials/header.ejs') %>
+        <div class="inner-container">
+            <%- include('../partials/errorMessage.ejs') %>
+            <%- body %>
+        </div>
+    </div>
+
+
+    <!-- file pond plugin  -->
+    <!-- file encode  -->
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+    <!-- file preview   -->
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <!-- file resizing  -->
+    <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+    <!-- file pond cdn  -->
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <!-- my js  -->
+    <script src="/javascripts/fileUpload.js"></script>
+</body>
+
+</html>
